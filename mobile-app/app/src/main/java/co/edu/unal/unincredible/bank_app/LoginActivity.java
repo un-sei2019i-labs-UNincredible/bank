@@ -52,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
 				Toast.makeText(this, getResources().getString(R.string.wrongUser), Toast.LENGTH_SHORT).show();
 				BaseDeDatabase.close();
 			}
-esfasefsdfsdfasdf
+
 		} else {
 			Toast.makeText(this, getResources().getString(R.string.invalidField), Toast.LENGTH_SHORT).show();
 		}
