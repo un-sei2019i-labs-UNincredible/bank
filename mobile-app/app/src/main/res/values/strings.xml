@@ -1,13 +1,11 @@
 <resources>
     <string name="app_name">bank-app</string>
-    <!-- Strings related to login -->
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
-    <string name="bienvenido">Bienvenido</string>
+    <!-- Strings related to login_layout -->
+    <string name="welcomeMessage">Bienvenido</string>
+    <string name="userInput">Usuario</string>
+    <string name="passwordInput">Contraseña</string>
+    <string name="login" translatable="false">Login</string>
+    <string name="wrongUser">Usuario invalido</string>
+    <string name="wrongPassword">Contraseña incorrecta</string>
+    <string name="invalidField">Inserte un usuario y contraseña</string>
 </resources>
