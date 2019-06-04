@@ -1,5 +1,7 @@
 package co.edu.unal.unincredible.bank_app.dataAccess.repositories;
 
+import java.util.List;
+
 import co.edu.unal.unincredible.bank_app.dataAccess.models.Account;
 import co.edu.unal.unincredible.bank_app.dataAccess.models.AccountDao;
 import co.edu.unal.unincredible.bank_app.dataAccess.models.DaoSession;
@@ -34,5 +36,7 @@ public class AccountRepository {
 		this.accountDao.update(account);
 	}
 
-
+	public List<Account> getAccounts() {
+		return this.accountDao.queryBuilder().list();
+	}
 }
