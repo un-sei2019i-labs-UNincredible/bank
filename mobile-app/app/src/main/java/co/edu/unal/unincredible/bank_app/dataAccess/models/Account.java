@@ -1,6 +1,8 @@
 package co.edu.unal.unincredible.bank_app.dataAccess.models;
 
+import org.greenrobot.greendao.DaoException;
 import org.greenrobot.greendao.annotation.Entity;
+import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.annotation.Id;
 import org.greenrobot.greendao.annotation.JoinProperty;
 import org.greenrobot.greendao.annotation.Property;
@@ -8,8 +10,6 @@ import org.greenrobot.greendao.annotation.ToMany;
 import org.greenrobot.greendao.annotation.ToOne;
 
 import java.util.List;
-import org.greenrobot.greendao.annotation.Generated;
-import org.greenrobot.greendao.DaoException;
 
 @Entity
 public class Account {
@@ -28,11 +28,15 @@ public class Account {
 	})
 	private List<Transaction> transactions;
 
-	/** Used to resolve relations */
+	/**
+	 * Used to resolve relations
+	 */
 	@Generated(hash = 2040040024)
 	private transient DaoSession daoSession;
 
-	/** Used for active entity operations. */
+	/**
+	 * Used for active entity operations.
+	 */
 	@Generated(hash = 335469827)
 	private transient AccountDao myDao;
 
@@ -65,11 +69,13 @@ public class Account {
 	@Generated(hash = 1867105156)
 	private transient String user__resolvedKey;
 
-	/** To-one relationship, resolved on first access. */
+	/**
+	 * To-one relationship, resolved on first access.
+	 */
 	@Generated(hash = 1749355717)
 	public User getUser() {
 		String __key = this.uid;
-		if (user__resolvedKey == null || user__resolvedKey != __key) {
+		if (user__resolvedKey == null || !user__resolvedKey.equals(__key)) {
 			final DaoSession daoSession = this.daoSession;
 			if (daoSession == null) {
 				throw new DaoException("Entity is detached from DAO context");
@@ -84,7 +90,9 @@ public class Account {
 		return user;
 	}
 
-	/** called by internal mechanisms, do not call yourself. */
+	/**
+	 * called by internal mechanisms, do not call yourself.
+	 */
 	@Generated(hash = 370057071)
 	public void setUser(User user) {
 		synchronized (this) {
@@ -117,7 +125,9 @@ public class Account {
 		return transactions;
 	}
 
-	/** Resets a to-many relationship, making the next get call to query for a fresh result. */
+	/**
+	 * Resets a to-many relationship, making the next get call to query for a fresh result.
+	 */
 	@Generated(hash = 1751056821)
 	public synchronized void resetTransactions() {
 		transactions = null;
@@ -159,13 +169,13 @@ public class Account {
 		myDao.update(this);
 	}
 
-	/** called by internal mechanisms, do not call yourself. */
+	/**
+	 * called by internal mechanisms, do not call yourself.
+	 */
 	@Generated(hash = 1812283172)
 	public void __setDaoSession(DaoSession daoSession) {
 		this.daoSession = daoSession;
 		myDao = daoSession != null ? daoSession.getAccountDao() : null;
 	}
-
-	//TODO: Build code
 
 }
