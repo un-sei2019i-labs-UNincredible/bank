@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">bank-app</string>
+    <string name="passwordInput">Password</string>
+    <string name="userInput">Username</string>
+    <string name="welcomeMessage">Welcome!</string>
+    <string name="wrongUser">Wrong user</string>
+    <string name="wrongPassword">Wrong password</string>
+    <string name="invalidField">Insert an user and password</string>
+</resources>
