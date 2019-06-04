@@ -9,11 +9,11 @@ public class AccountRepository {
 	private AccountDao accountDao;
 
 	/*
-	* TODO:
-	*
-	* deleteAccount()
-	*
-	* */
+	 * TODO:
+	 *
+	 * deleteAccount()
+	 *
+	 * */
 
 	public AccountRepository(DaoSession session) {
 		this.accountDao = session.getAccountDao();
