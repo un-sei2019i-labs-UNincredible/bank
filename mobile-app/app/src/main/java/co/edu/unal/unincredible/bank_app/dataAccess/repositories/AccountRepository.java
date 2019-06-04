@@ -11,7 +11,6 @@ public class AccountRepository {
 	/*
 	* TODO:
 	*
-	* getAccountById()
 	* updateAccount()
 	* deleteAccount()
 	*
@@ -26,6 +25,10 @@ public class AccountRepository {
 		this.accountDao.insert(account);
 		return account;
 
+	}
+
+	public Account getAccountById(String uid) {
+		return this.accountDao.queryBuilder().where(AccountDao.Properties.Uid.eq(uid)).unique();
 	}
 
 
