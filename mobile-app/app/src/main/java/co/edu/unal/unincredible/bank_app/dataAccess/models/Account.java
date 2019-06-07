@@ -15,65 +15,65 @@ import java.util.List;
 @Entity
 public class Account {
 	private String uid;
-	
+
 	@Id
 	@ToOne(joinProperty = "uid")
 	private User user;
-	
+
 	@Property(nameInDb = "amount")
 	private int amount;
-	
+
 	@ToMany(joinProperties = {
 			@JoinProperty(name = "uid", referencedName = "source"),
 			@JoinProperty(name = "uid", referencedName = "receiver")
 	})
 	private List<Transaction> transactions;
-	
+
 	/**
 	 * Used to resolve relations
 	 */
 	@Generated(hash = 2040040024)
 	private transient DaoSession daoSession;
-	
+
 	/**
 	 * Used for active entity operations.
 	 */
 	@Generated(hash = 335469827)
 	private transient AccountDao myDao;
-	
+
 	@Generated(hash = 1320934433)
 	public Account(String uid, int amount) {
 		this.uid = uid;
 		this.amount = amount;
 	}
-	
+
 	@Generated(hash = 882125521)
 	public Account() {
 	}
-	
+
 	public String getUid() {
 		return this.uid;
 	}
-	
+
 	public void setUid(String uid) {
 		this.uid = uid;
 	}
-	
+
 	public int getAmount() {
 		return this.amount;
 	}
-	
+
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
-	
+
 	@Generated(hash = 1867105156)
 	private transient String user__resolvedKey;
-	
+
 	/**
 	 * To-one relationship, resolved on first access.
 	 */
-	@Keep //no se rick parece falsos
+	@Keep
 	public User getUser() {
 		String __key = this.uid;
 		if (user__resolvedKey == null || !user__resolvedKey.equals(__key)) {
@@ -90,7 +90,7 @@ public class Account {
 		}
 		return user;
 	}
-	
+
 	/**
 	 * called by internal mechanisms, do not call yourself.
 	 */
@@ -102,7 +102,7 @@ public class Account {
 			user__resolvedKey = uid;
 		}
 	}
-	
+
 	/**
 	 * To-many relationship, resolved on first access (and after reset).
 	 * Changes to to-many relations are not persisted, make changes to the target entity.
@@ -125,7 +125,7 @@ public class Account {
 		}
 		return transactions;
 	}
-	
+
 	/**
 	 * Resets a to-many relationship, making the next get call to query for a fresh result.
 	 */
@@ -133,7 +133,7 @@ public class Account {
 	public synchronized void resetTransactions() {
 		transactions = null;
 	}
-	
+
 	/**
 	 * Convenient call for {@link org.greenrobot.greendao.AbstractDao#delete(Object)}.
 	 * Entity must attached to an entity context.
@@ -145,7 +145,7 @@ public class Account {
 		}
 		myDao.delete(this);
 	}
-	
+
 	/**
 	 * Convenient call for {@link org.greenrobot.greendao.AbstractDao#refresh(Object)}.
 	 * Entity must attached to an entity context.
@@ -157,7 +157,7 @@ public class Account {
 		}
 		myDao.refresh(this);
 	}
-	
+
 	/**
 	 * Convenient call for {@link org.greenrobot.greendao.AbstractDao#update(Object)}.
 	 * Entity must attached to an entity context.
@@ -169,7 +169,7 @@ public class Account {
 		}
 		myDao.update(this);
 	}
-	
+
 	/**
 	 * called by internal mechanisms, do not call yourself.
 	 */
@@ -178,5 +178,5 @@ public class Account {
 		this.daoSession = daoSession;
 		myDao = daoSession != null ? daoSession.getAccountDao() : null;
 	}
-	
+
 }

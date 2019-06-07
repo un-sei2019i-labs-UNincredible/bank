@@ -21,41 +21,56 @@ public class User {
 	@Property(nameInDb = "admin")
 	@NotNull
 	private boolean admin;
-	
-	@Generated(hash = 2025742238)
-	public User(String uid, @NotNull String displayName, boolean admin) {
+
+	@Property(nameInDb = "password")
+	@NotNull
+	private String password;
+
+	@Generated(hash = 1476049323)
+	public User(String uid, @NotNull String displayName, boolean admin,
+			@NotNull String password) {
 		this.uid = uid;
 		this.displayName = displayName;
 		this.admin = admin;
+		this.password = password;
 	}
 	
-	@Keep //:v
+	@Keep
 	public User() {
 		this.admin = false;
 	}
-	
+
 	public String getUid() {
 		return this.uid;
 	}
-	
+
 	public void setUid(String uid) {
 		this.uid = uid;
 	}
-	
+
 	public String getDisplayName() {
 		return this.displayName;
 	}
-	
+
 	public void setDisplayName(String displayName) {
 		this.displayName = displayName;
 	}
-	
+
 	public boolean getAdmin() {
 		return this.admin;
 	}
-	
+
 	public void setAdmin(boolean admin) {
 		this.admin = admin;
 	}
+
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
 	
 }

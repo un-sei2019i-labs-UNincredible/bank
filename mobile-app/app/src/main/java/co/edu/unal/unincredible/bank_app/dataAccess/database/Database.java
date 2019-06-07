@@ -18,7 +18,7 @@ public class Database extends DaoMaster.OpenHelper {
 	@Override
 	public void onCreate(org.greenrobot.greendao.database.Database db) {
 		super.onCreate(db);
-		db.execSQL("insert into USER(uid,name,admin)values ('user','123456',0)");
+		db.execSQL("insert into USER(uid,name,admin,password)values ('admin','Administrator',1,'123456')");
 	}
 
 	public DaoSession getNewDaoSession() {
