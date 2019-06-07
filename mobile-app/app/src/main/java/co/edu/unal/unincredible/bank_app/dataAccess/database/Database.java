@@ -8,8 +8,11 @@ import co.edu.unal.unincredible.bank_app.dataAccess.models.DaoSession;
 
 public class Database extends DaoMaster.OpenHelper {
 
+	private Context context;
+
 	public Database(Context context) {
 		super(context, "notes-db");
+		this.context = context;
 	}
 
 	@Override
@@ -18,14 +21,11 @@ public class Database extends DaoMaster.OpenHelper {
 		db.execSQL("insert into USER(uid,name,admin)values ('user','123456',0)");
 	}
 
-	public DaoSession getNewDaoSesion(Context context) {
-		Database helper = new Database(context);
+	public DaoSession getNewDaoSession() {
+		Database helper = new Database(this.context);
 		SQLiteDatabase db = helper.getWritableDatabase();
 		DaoMaster daoMaster = new DaoMaster(db);
-		DaoSession daoSession = daoMaster.newSession();
-
-		return daoSession;
-
+		return daoMaster.newSession();
 	}
 }
 
