@@ -32,4 +32,12 @@ public class UserRepository {
 	public List<User> getUsers() {
 		return this.user.queryBuilder().list();
 	}
+
+	public boolean isPassword(User user, String password) {
+		return user.getPassword().equals(password);
+	}
+
+	public boolean isPassword(String uid, String password) {
+		return this.getUserById(uid).getPassword().equals(password);
+	}
 }
