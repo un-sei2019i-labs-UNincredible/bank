@@ -26,7 +26,7 @@ public class LoginController extends Controller {
 	//TODO: implement this method and solve the problems in LoginActivity
 	public LoginStatus login(String username, String password) {
 
-		if (username != null && password != null) {
+		if (username != null && password != null && !username.isEmpty() && !password.isEmpty()) {
 
 			//we get the user from the repository
 			User user = this.userRepository.getUserById(username);

@@ -7,13 +7,12 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import co.edu.unal.unincredible.bank_app.dataAccess.models.User;
-import co.edu.unal.unincredible.bank_app.dataAccess.repositories.UserRepository;
+import co.edu.unal.unincredible.bank_app.businessLogic.controllers.LoginController;
 
 
 public class LoginActivity extends AppCompatActivity {
 	private EditText user, password;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -21,38 +20,44 @@ public class LoginActivity extends AppCompatActivity {
 		user = findViewById(R.id.user);
 		password = findViewById(R.id.password);
 	}
-	
-	
-	public void search(View view) {
-		
-		
+
+
+	public void login(View view) {
+
 		String username = this.user.getText().toString();
-		
-		if (!username.isEmpty()) {
-			UserRepository userRepository = new UserRepository(this);
-			User test = userRepository.read(username);
-			
-			
-			//
-			if (!test.getUid().isEmpty()) {
-				
-				if (test.getDisplayName().equals(this.password.getText().toString())) {
-					
-					Intent intent = new Intent(view.getContext(), HomeActivity.class);
-					startActivityForResult(intent, 0);
-					
-					
-				} else {
-					Toast.makeText(this, getResources().getString(R.string.wrongPassword), Toast.LENGTH_LONG).show();
-				}
-				
-			} else {
-				Toast.makeText(this, getResources().getString(R.string.wrongUser), Toast.LENGTH_SHORT).show();
-				
-			}
-			
-		} else {
-			Toast.makeText(this, getResources().getString(R.string.invalidField), Toast.LENGTH_SHORT).show();
+		String password = this.password.getText().toString();
+
+		LoginController loginControllerController = new LoginController(this);
+
+		switch (loginControllerController.login(username, password)) {
+			case NO_USER_OR_PASSWORD_WERE_GIVEN:
+
+				Toast.makeText(this,
+						getResources().getString(R.string.invalidField),
+						Toast.LENGTH_SHORT)
+						.show();
+				break;
+
+			case WRONG_USER:
+				Toast.makeText(this, getResources().getString(R.string.wrongUser),
+						Toast.LENGTH_SHORT)
+						.show();
+				break;
+
+			case WRONG_PASSWORD:
+				Toast.makeText(this, getResources().getString(R.string.wrongPassword),
+						Toast.LENGTH_LONG)
+						.show();
+				break;
+
+			case SUCCESS:
+				Intent intent = new Intent(view.getContext(), HomeActivity.class);
+				startActivityForResult(intent, 0);
+				break;
+
+			default:
+				break;
 		}
+
 	}
 }
