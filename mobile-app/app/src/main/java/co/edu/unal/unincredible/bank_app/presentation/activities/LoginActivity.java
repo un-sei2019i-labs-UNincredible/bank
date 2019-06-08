@@ -1,4 +1,4 @@
-package co.edu.unal.unincredible.bank_app;
+package co.edu.unal.unincredible.bank_app.presentation.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import co.edu.unal.unincredible.bank_app.R;
 import co.edu.unal.unincredible.bank_app.businessLogic.controllers.LoginController;
 
 
