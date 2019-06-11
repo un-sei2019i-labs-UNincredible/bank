@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import co.edu.unal.unincredible.bank_app.R;
 import co.edu.unal.unincredible.bank_app.businessLogic.controllers.LoginController;
+import co.edu.unal.unincredible.bank_app.dataAccess.repositories.UserRepository;
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -18,8 +19,8 @@ public class LoginActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.login_layout);
-		user = findViewById(R.id.user);
-		password = findViewById(R.id.password);
+		this.user = findViewById(R.id.user);
+		this.password = findViewById(R.id.password);
 	}
 
 
@@ -53,6 +54,9 @@ public class LoginActivity extends AppCompatActivity {
 
 			case SUCCESS:
 				Intent intent = new Intent(view.getContext(), HomeActivity.class);
+
+				//we send the actual user to home activity
+				intent.putExtra("uid", username);
 				startActivityForResult(intent, 0);
 				break;
 
