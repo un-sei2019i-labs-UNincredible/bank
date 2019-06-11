@@ -19,6 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".presentation.activities.HomeActivity"/>
+        <activity android:name=".presentation.activities.SendMoneyActivity" />
     </application>
 
 </manifest>
