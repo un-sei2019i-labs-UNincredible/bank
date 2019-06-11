@@ -7,7 +7,9 @@
     <string name="welcomeMessage">Bienvenido</string>
     <string name="wrongPassword">Contraseña incorrecta</string>
     <string name="wrongUser">Usuario invalido</string>
-    <string name="balance">Cantidad</string>
+    <string name="amount">Cantidad</string>
     <string name="transfer">Transferir</string>
     <string name="transfer_btn">Enviar dinero</string>
+    <string name="balance_account">"Saldo actual: "</string>
+    <string name="receiver">Cuenta de destino</string>
 </resources>
