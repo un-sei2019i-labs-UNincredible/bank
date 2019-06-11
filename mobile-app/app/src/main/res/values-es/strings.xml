@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">bank-app</string>
+    <string name="invalidField">Inserte un usuario y contraseña</string>
+    <string name="passwordInput">Contraseña</string>
+    <string name="userInput">Usuario</string>
+    <string name="welcomeMessage">Bienvenido</string>
+    <string name="wrongPassword">Contraseña incorrecta</string>
+    <string name="wrongUser">Usuario invalido</string>
+    <string name="amount">Cantidad</string>
+    <string name="transfer">Transferir</string>
+</resources>

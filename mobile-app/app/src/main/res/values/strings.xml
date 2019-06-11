@@ -1,11 +1,13 @@
 <resources>
     <string name="app_name">bank-app</string>
     <!-- Strings related to login_layout -->
-    <string name="welcomeMessage">Bienvenido</string>
-    <string name="userInput">Usuario</string>
-    <string name="passwordInput">Contraseña</string>
+    <string name="welcomeMessage">Welcome!</string>
+    <string name="userInput">Username</string>
+    <string name="passwordInput">Password</string>
     <string name="login" translatable="false">Login</string>
-    <string name="wrongUser">Usuario invalido</string>
-    <string name="wrongPassword">Contraseña incorrecta</string>
-    <string name="invalidField">Inserte un usuario y contraseña</string>
+    <string name="wrongUser">Wrong user</string>
+    <string name="wrongPassword">Wrong password</string>
+    <string name="invalidField">Insert an user and password</string>
+    <string name="amount">Amount</string>
+    <string name="transfer">Transfer</string>
 </resources>
