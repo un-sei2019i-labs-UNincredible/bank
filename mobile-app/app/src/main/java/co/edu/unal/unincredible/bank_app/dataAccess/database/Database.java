@@ -20,8 +20,8 @@ public class Database extends DaoMaster.OpenHelper {
 		super.onCreate(db);
 		db.execSQL("insert into USER(uid,name,admin,password)values ('admin','Administrator',1,'123456')");
 
-		db.execSQL("insert into USER(uid,name,admin,password)values ('user1','v:',0, '123456')");
-		db.execSQL("insert into USER(uid,name,admin,password)values ('user2',':v',0, '123457')");
+		db.execSQL("insert into USER(uid,name,admin,password)values ('user1','Username 1',0, '123456')");
+		db.execSQL("insert into USER(uid,name,admin,password)values ('user2','Username 2',0, '123457')");
 
 		db.execSQL("insert into ACCOUNT(uid,balance)values ('user',10000)");
 		db.execSQL("insert into ACCOUNT(uid,balance)values ('user2', 200)");

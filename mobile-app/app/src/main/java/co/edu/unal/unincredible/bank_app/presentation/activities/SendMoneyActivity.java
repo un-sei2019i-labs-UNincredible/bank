@@ -13,5 +13,6 @@ public class SendMoneyActivity extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.send_money_layout);
+		String username = getIntent().getStringExtra("uid");
 	}
 }
