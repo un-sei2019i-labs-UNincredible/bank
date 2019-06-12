@@ -22,7 +22,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.26999998" />
+        app:layout_constraintVertical_bias="0.27" />
 
     <EditText
         android:id="@+id/user"
@@ -36,12 +36,12 @@
         android:layout_marginBottom="8dp"
         android:ems="10"
         android:hint="@string/userInput"
-        android:inputType="textEmailAddress"
+        android:inputType="textShortMessage|textNoSuggestions"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcomeMessage"
-        app:layout_constraintVertical_bias="0.13999999" />
+        app:layout_constraintVertical_bias="0.14" />
 
     <EditText
         android:id="@+id/password"
@@ -78,5 +78,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password"
-        app:layout_constraintVertical_bias="0.32999998" />
+        app:layout_constraintVertical_bias="0.33" />
 </android.support.constraint.ConstraintLayout>

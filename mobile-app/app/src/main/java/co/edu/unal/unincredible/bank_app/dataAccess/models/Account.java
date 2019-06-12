@@ -20,8 +20,8 @@ public class Account {
 	@ToOne(joinProperty = "uid")
 	private User user;
 
-	@Property(nameInDb = "amount")
-	private int amount;
+	@Property(nameInDb = "balance")
+	private int balance;
 
 	@ToMany(joinProperties = {
 			@JoinProperty(name = "uid", referencedName = "source"),
@@ -41,10 +41,10 @@ public class Account {
 	@Generated(hash = 335469827)
 	private transient AccountDao myDao;
 
-	@Generated(hash = 1320934433)
-	public Account(String uid, int amount) {
+	@Generated(hash = 1016193090)
+	public Account(String uid, int balance) {
 		this.uid = uid;
-		this.amount = amount;
+		this.balance = balance;
 	}
 
 	@Generated(hash = 882125521)
@@ -59,12 +59,12 @@ public class Account {
 		this.uid = uid;
 	}
 
-	public int getAmount() {
-		return this.amount;
+	public int getBalance() {
+		return this.balance;
 	}
 
-	public void setAmount(int amount) {
-		this.amount = amount;
+	public void setBalance(int balance) {
+		this.balance = balance;
 	}
 
 	@Generated(hash = 1867105156)
